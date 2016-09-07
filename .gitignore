@@ -95,3 +95,4 @@ ENV/
 *.sql
 *.sqlite
 *.sqlite3
+migrations/
