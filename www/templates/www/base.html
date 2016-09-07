@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="canonical" href="https://www.danakita.com/" />
+
+	{% load static %}
+	<link rel="icon" href="{% static 'www/images/favicon.ico' %}" />
+
+	<meta name="description" content="Indonesian P2P lending site"/>
+
+	<!--Facebook OG meta-->
+	<meta property="og:title" content="DanaKita - Berapa dana yang anda mahu?" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://www.danakita.com/" />
+	<!-- TODO Replace with DK image -->
+	<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
+	<title>DanaKita - Berapa dana yang anda mahu?</title>
+
+
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'www/style.css' %}" />
+
+
+	{% csrf_token %}
+
+
+</head>
+<body>
+
+	<div class="container">
+
+		<!--The Navbar-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">DanaKita</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Login</a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Borrowing</a></li>
+						<li><a href="#">Investing</a></li>
+						<li><a href="#">Legal</a></li>
+						<li><a href="#">About Us</a></li>
+
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<!--End The Navbar-->
+
+
+		{% block content %}
+		{% endblock %}
+
+
+	</div> <!-- /container -->
+
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-83798722-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+</body>
+</html>
+
+
+
+
