@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 
-from .models import Loan_Desired
+from .models import LoanReq
 
-admin.site.register(Loan_Desired)
+admin.site.register(LoanReq)
