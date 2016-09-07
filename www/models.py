@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class Loan_Desired(models.Model):
+    amount = models.PositiveIntegerField(default=0)
+    req_date = models.DateTimeField()
