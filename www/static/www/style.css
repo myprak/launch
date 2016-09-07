@@ -92,3 +92,8 @@
 /*End Navbar styling*/
 
 /*body { padding-top: 70px; }*/
+
+.navbar-default .navbar-brand {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+}
