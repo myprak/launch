@@ -5,28 +5,46 @@
 <!-- Main component for a primary marketing message or call to action -->
 
 <div class="jumbotron">
-	<div class="container-fluid">
-		<h1>Berapa dana yang anda mahu?</h1>
-
-		<form>
-		{% csrf_token %}
-			<div class="form-group">
-				<label for="loanDesiredAmount">Pinjaman personal sehingga Rp 20 juta</label>
-				<input type="number" min="5" max="20" class="form-control" id="loanDesiredAmount" placeholder="Rp 0 juta">
-			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1">Password</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			</div>
+	<!--<div class="container-fluid">-->
+		
 
 
-			<button type="submit" class="btn btn-default">Submit</button>
+
+		{% if form.errors %}
+		<p style="color:red;"> Please correct the error below.</p>
+		{% endif %}
+
+
+		<form action="" method="post">
+			<table>
+				{{ form.as_table }}
+			</table>
+			{% csrf_token %}
+			<input type="submit" value="Submit">
 		</form>
 
 
 
+<!--
+		<form method="post">
+		{% csrf_token %}
+			<div class="form-group">
+				<label for="loanDesiredAmount">Pinjaman personal dari Rp 5 hingga Rp 20 juta</label>
+				<input type="number" min="5" max="20" class="form-control" id="loanDesiredAmount" placeholder="Rp 5 juta">
+			</div>
+			<div class="form-group">
+				<label for="loanPurpose">Purpose</label>
+				<input type="text" class="form-control" id="loanPurpose" placeholder="Purpose">
+			</div>
+
+
+			<button type="submit" class="btn btn-warning">Submit</button>
+		</form>
+
+		<!-- /jumbotron -->
+
 	</div>
-</div> <!-- /jumbotron -->
+</div> 
 
 {% endblock %}
 
