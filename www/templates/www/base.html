@@ -4,14 +4,18 @@
 
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<title>DanaKita - Berapa dana yang anda mahu?</title>
 	<link rel="canonical" href="https://www.danakita.com/" />
 
 	{% load static %}
 	<link rel="icon" href="{% static 'www/images/favicon.ico' %}" />
 
-	<meta name="description" content="Indonesian P2P lending site"/>
 
+
+
+	<meta name="description" content="Indonesian P2P lending site"/>
 	<!--Facebook OG meta-->
 	<meta property="og:title" content="DanaKita - Berapa dana yang anda mahu?" />
 	<meta property="og:type" content="website"/>
@@ -19,15 +23,15 @@
 	<!-- TODO Replace with DK image -->
 	<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
 
-	<title>DanaKita - Berapa dana yang anda mahu?</title>
+	
 
-
+	<!--The brand name's -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	{% load bootstrap3 %}
 	{% bootstrap_css %}
-	{% bootstrap_javascript %}
+	
 
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'www/style.css' %}" />
@@ -82,6 +86,7 @@
 	</div> <!-- /container -->
 
 
+{% bootstrap_javascript %}
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
