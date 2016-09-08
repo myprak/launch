@@ -14,8 +14,8 @@ def index(request):
         form = LoanReqForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            aLoan = LoanReq(req_amount_ini=cd['req_amount_ini'],
-              req_purpose=cd['req_purpose'],
+            aLoan = LoanReq(amount=cd['amount'],
+              purpose=cd['purpose'],
               req_date=datetime.now())
             aLoan.save()
             return HttpResponseRedirect('print_redirect.html')
