@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.contrib.sessions.models import Session
 
 from .models import LoanReq
 
@@ -10,3 +10,4 @@ class LoanReqAdmin(admin.ModelAdmin):
 
 
 admin.site.register(LoanReq, LoanReqAdmin)
+admin.site.register(Session)
