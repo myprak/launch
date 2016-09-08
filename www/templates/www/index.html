@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title><b>DanaKita - Berapa dana yang anda mahu?</b></title>
+	<title>DanaKita - Berapa dana yang anda mahu?</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -41,7 +41,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'www/css/owl.theme.css' %}" />
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'www/css/owl.carousel.css' %}" />
-
+	<link rel="stylesheet" type="text/css" href="{% static 'www/css/bootstrap-social.css' %}" />
 
 	<!-- Colors -->
 	<!-- <link href="css/css-index.css" rel="stylesheet" media="screen"> -->
@@ -60,10 +60,32 @@
 
 <body data-spy="scroll" data-target="#navbar-scroll">
 
+	<!-- Facebook SDK - Which pages need this? TODO appID somewhere else? TODO --> 
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1758533574420307',
+				xfbml      : true,
+				version    : 'v2.7'
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/id_ID/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
+
+
 	<!-- /.parallax full screen background image -->
 
 	<!-- {% load static %} {% static 'www/css/css-index.css' %} -->
-{% load static %} 
+	{% load static %} 
 	<div class="fullscreen landing parallax" style="background-image:url('{% static 'www/images/bg.jpg' %} ');" data-img-width="2000" data-img-height="1333" data-diff="100">
 
 		<div class="overlay">
@@ -95,7 +117,7 @@
 
 
 							<!-- Have to modify this to what I want --> 
-							<h3 class="form-title text-center">Get Started</h3>
+							<h3 class="form-title text-center">Mulai</h3>
 							<form class="form-header" action="http://moxdesign.us10.list-manage.com/subscribe/post" role="form" method="POST" id="#">
 								<input type="hidden" name="u" value="503bdae81fde8612ff4944435">
 								<input type="hidden" name="id" value="bfdba52708">
@@ -108,11 +130,21 @@
 								<div class="form-group last">
 									<input type="submit" class="btn btn-warning btn-block btn-lg" value="SUBSCRIBE">
 								</div>
-								<p class="privacy text-center">We will not share your email. Read our <a href="privacy.html">privacy policy</a>.</p>
+
 							</form>
 
 
-						</div>				
+							<a class="btn btn-block btn-social btn-facebook">
+								<span class="fa fa-facebook"></span> Masuk dengan Facebook
+							</a>
+							<a class="btn btn-block btn-social btn-google">
+								<span class="fa fa-google"></span> Masuk dengan Google
+							</a>
+
+							<p class="privacy text-center">We will not share your email. Read our <a href="privacy.html">privacy policy</a>.</p>
+						</div>	
+
+
 
 					</div>
 				</div>

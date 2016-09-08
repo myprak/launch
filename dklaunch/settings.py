@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+# TODO hide this somwhere?
+SOCIAL_AUTH_FACEBOOK_KEY = '1758533574420307'
+SOCIAL_AUTH_FACEBOOK_SECRET = '111e640491071fc9fa41aeaf55586439'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_friends']
+
+# This probably wont work as fb doesnt allow redirect to local host
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/home/'
+SOCIAL_AUTH_LOGIN_URL = '/'
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -33,6 +43,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'www',
     'bootstrap3',
+    'social.apps.django_app.default',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -71,6 +84,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dklaunch.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

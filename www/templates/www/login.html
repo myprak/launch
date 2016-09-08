@@ -1,0 +1,19 @@
+<!--
+<a>Baa</a>
+<br>
+<a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+<a>Baa</a>
+<br>
+-->
+
+{% if user and not user.is_anonymous %}
+  <a>Hello, {{ user.get_full_name }}!</a>
+  <br>
+  <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+
+    <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+
+{% endif %}

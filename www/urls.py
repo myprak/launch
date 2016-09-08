@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 
 from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    # url(r'^contact-form/$', views.contact_form),
-    # url(r'^contact/$', views.contact),
-    url(r'^print_redirect.html/$', views.print_redirect),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^home/$', views.home, name='home'),
+    url(r'^logout/$', views.logout, name='logout'),
 ]
