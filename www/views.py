@@ -30,6 +30,10 @@ def forgot_password(request):
     return render(request, 'www/forgot_password.html')
 
 
+def loan_app(request):
+    return render(request, 'www/loan_app.html')
+
+
 # Below is just boilerplate
 # def login(request):
 #     # context = RequestContext(request, {
