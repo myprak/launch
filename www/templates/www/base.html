@@ -1,3 +1,4 @@
+{% load bootstrap3 staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +16,15 @@
 	<!-- TODO Replace with DK image -->
 	<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
 
+	<!--The brand name's -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	{% bootstrap_css %}
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'www/style.css' %}" />
 
-
-
-	{% load static %}
 	<link rel="icon" href="{% static 'www/images/favicon.ico' %}" />
 	<!--The brand name's -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -111,7 +117,6 @@
 
 
 	<!-- /.javascript files -->
-	{% load static %}
 	<script src="{% static 'www/js/jquery.js' %}"></script>
 
 	{% bootstrap_javascript %}
@@ -120,30 +125,6 @@
 	<script src="{% static 'www/js/jquery.sticky.js' %}"></script>
 	<script src="{% static 'www/js/wow.min.js' %}"></script>
 	<script src="{% static 'www/js/owl.carousel.min.js' %}"></script>
-
-
-
-	<!-- Facebook SDK - Which pages need this? TODO appID somewhere else? TODO --> 
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '1758533574420307',
-				xfbml      : true,
-				version    : 'v2.7'
-			});
-		};
-
-		(function(d, s, id){
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) {return;}
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/id_ID/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-
-
-
 
 
 	<script>
