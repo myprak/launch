@@ -26,22 +26,26 @@ def index(request):
     return render(request, 'www/index.html', {'form': form})
 
 
-
-def login(request):
-    # context = RequestContext(request, {
-    #     'request': request, 'user': request.user})
-    # return render_to_response('login.html', context_instance=context)
-    return render(request, 'www/login.html')
+def forgot_password(request):
+    return render(request, 'www/forgot_password.html')
 
 
-@login_required(login_url='/')
-def home(request):
-    return render_to_response('www/home.html')
+# Below is just boilerplate
+# def login(request):
+#     # context = RequestContext(request, {
+#     #     'request': request, 'user': request.user})
+#     # return render_to_response('login.html', context_instance=context)
+#     return render(request, 'www/login.html')
 
 
-def logout(request):
-    auth_logout(request)
-    return HttpResponseRedirect('/www/login')
-#    return render(request, 'www/login.html')
-#    return HttpResponseRedirect('www/home.html')
-#    return redirect('www/home.html')
+# @login_required(login_url='/')
+# def home(request):
+#     return render_to_response('www/home.html')
+
+
+# def logout(request):
+#     auth_logout(request)
+#     return HttpResponseRedirect('/www/login')
+# #    return render(request, 'www/login.html')
+# #    return HttpResponseRedirect('www/home.html')
+# #    return redirect('www/home.html')
