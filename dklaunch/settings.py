@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    #'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 ]
 
@@ -83,9 +83,15 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1758533574420307'
-SOCIAL_AUTH_FACEBOOK_SECRET = '111e640491071fc9fa41aeaf55586439'
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_friends']
+
+# Allauth settings
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
+ACCOUNT_USERNAME_REQUIRED = False
+LOGIN_REDIRECT_URL = 'index'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

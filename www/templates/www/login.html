@@ -1,10 +1,4 @@
-<!--
-<a>Baa</a>
-<br>
-<a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
-<a>Baa</a>
-<br>
--->
+{% load socialaccount %}
 
 {% if user and not user.is_anonymous %}
   <a>Hello, {{ user.get_full_name }}!</a>
@@ -12,8 +6,7 @@
   <a href="{% url 'accounts-logout' %}">Logout</a>
 {% else %}
 
-  <a href="?next={{ request.path }}">Login with Facebook</a>
-
-    <a href="?next={{ request.path }}">Login with Twitter</a>
+  <a href="{% provider_login_url 'facebook' method='js_sdk' %}?next={{ request.path }}">Login with Facebook</a>
+    <a href="{% provider_login_url 'google' %}?next={{ request.path }}">Login with Twitter</a>
 
 {% endif %}

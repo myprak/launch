@@ -1,5 +1,7 @@
 {% extends 'www/base.html' %}
 
+{% load socialaccount %}
+
 {% block content %}
 
 
@@ -20,7 +22,7 @@
 					</h1>
 					{% if user and not user.is_anonymous %}
 					<a>Hello, {{ user.get_full_name }}!</a>
-					<div class="btn-section"><a href="logout" class="btn-default">Logout</a></div>
+					<div class="btn-section"><a href="{% url 'account_logout' %}" class="btn-default">Logout</a></div>
 					<br>
 					{% else %}
 					<a>Hello, Anonymous!</a>
@@ -69,10 +71,10 @@
 
 
 
-						<a class="btn btn-block btn-social btn-facebook">
+						<a class="btn btn-block btn-social btn-facebook" href="{% provider_login_url 'facebook' method='js_sdk' %}">
 							<span class="fa fa-facebook"></span> Masuk dengan Facebook
 						</a>
-						<a class="btn btn-block btn-social btn-google">
+						<a class="btn btn-block btn-social btn-google" href="{% provider_login_url 'google' %}?next={{ request.path }}">
 							<span class="fa fa-google"></span> Masuk dengan Google
 						</a>
 
