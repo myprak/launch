@@ -87,6 +87,7 @@ AUTHENTICATION_BACKENDS = (
 
 
 # Allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
@@ -95,6 +96,8 @@ ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
 ACCOUNT_USERNAME_REQUIRED = False
 LOGIN_REDIRECT_URL = 'index'
 
+# This should be disabled at production
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
